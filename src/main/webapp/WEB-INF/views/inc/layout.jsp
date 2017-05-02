@@ -7,7 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>으갹갹갹</title>
-<link href="/MavenPrj/resource/css/customer/style.css" type="text/css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/MavenPrj/resource/css/style.css" type="text/css" rel="stylesheet" >
 </head>
 <body>
 	<!-- ---------------------------------------------헤 더------------------------------------------------------------ -->
@@ -15,6 +16,9 @@
 	<tiles:insertAttribute name="header" />
 	<!-- ---------------------------------------------비주얼------------------------------------------------------------ -->
 	<!-- 비주얼 부분 -->
+	<div class="title">
+		우하하하하하
+	</div>
 	<tiles:insertAttribute name="visual" />
 	<!-- -----------------------------------------------바디---------------------------------------------------------- -->
 	<div id="body">

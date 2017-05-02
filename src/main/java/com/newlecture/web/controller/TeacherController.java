@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.newlecture.web.entity.Chapter;
+import com.newlecture.web.model.teacher.LectureDetailModel;
 import com.newlecture.web.model.teacher.LectureModel;
 import com.newlecture.web.service.TeacherService;
 
@@ -35,10 +37,14 @@ public class TeacherController {
 	}
 	
 	@RequestMapping("lecture-detail")
-	public String lectureDetail(String code, Model model){
+	public String lectureDetail(@RequestParam(value="l", defaultValue="1")String lectureId, Model model){
 		
 		//LectureDetailModel m = service.getLectureDetailModel(code);
 		//model.addAttribute("model", m);
+		
+		LectureDetailModel m = service.getChapterModel(lectureId);
+		
+		model.addAttribute("model", m);
 		
 		return "teacher.lecture-detail";
 	}

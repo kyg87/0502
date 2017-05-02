@@ -32,6 +32,9 @@ public class JoinusController {
 		
 		String memberId = principal.getName();
 		
+		System.out.println(memberId);
+		
+		
 		String role = "ROLE_TEACHER";//memberRoleDao.getDefaultRoleById(memberId);
 		
 		if(role.equals("ROLE_ADMIN"))

@@ -6,8 +6,10 @@
 	<table>
 		<c:forEach var="lec" items="${model.lectures}">		
 		<tr>
-			<td>${lec.title}</td>
-			<td>${lec.level.name}</td>
+		
+			<td><a href="lecture-detail?l=${lec.id}">${lec.title}</a></td>
+		
+			<td>${lec.levelName} / ${lec.memberName }</td>
 			<td>
 				<input type="button" value="공개" />
 				<input type="button" value="편집" />

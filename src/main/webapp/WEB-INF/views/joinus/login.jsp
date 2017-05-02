@@ -7,9 +7,36 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+
+	body{
+	font-size: 12px;
+	}
+	.row{
+	width: 90%;
+	font-size: 16px;
+	}
+	
+	.row > div{
+		box-sizing : border-box;
+		float : left;
+		min-height:100px;
+		background: pink;
+		
+		font-size: 1em;
+	}
+
+</style>
 </head>
 <body>
 	<h1>로그인${validate}</h1>
+	<div class ="row col-left col-right">
+	
+		<div class="col-xs-2 col-sm-2" style="padding: 10px">동해물과 백두산이 마르고 닳도록</div>
+		<div class="col-xs-2 col-sm-2 col-xs-margin">동해물과 백두산이 마르고 닳도록</div>
+		<div class="col-xs-2 col-sm-2 col-sm-margin">동해물과 백두산이 마르고 닳도록</div>
+		<div class="col-xs-2 col-sm-2 col-xs-margin">동해물과 백두산이 마르고 닳도록</div>
+	</div>
 	<form action="${root}/j_spring_security_check" method="post">
 		<fieldset>
 			<table>

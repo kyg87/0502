@@ -18,6 +18,8 @@ public class NewlecSuccessHandler implements AuthenticationSuccessHandler {
 				Authentication authentication)
 			throws IOException, ServletException {
 		
+		
+	
 		//response.sendRedirect("/MavenPrj/admin/index");
 		//response.sendRedirect("/MavenPrj/teacher/index");
 		response.sendRedirect("/MavenPrj/student/index");
