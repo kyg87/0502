@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <style type="text/css">
 	#chat-client{
 		width: 500px;
@@ -17,32 +18,43 @@
 
 </style>
 <script type="text/javascript">
-	 window.addEventListener("load",function(){
-		var connButton = document.querySelector("#conn-button");
-		var sendbutton = document.querySelector("#send-button");
+	$(function(){
+		
+		var connButton = $("#conn-button");
+		var sendbutton = $("#send-button");
+		var chatList = $("#chat-list");
 		var wsocket = null;
 		
-		sendbutton.onclick = function(){
-			var chatIput = document.querySelector("#chat-input");
-			var msg = chatIput.value;
+		sendbutton.click(function(){
+			var chatIput = $("#chat-input");
+			var msg = chatIput.val();
+			/*
+			{"id":">_<","msg":"hello"}
+			*/
+			var data ={"id":">_<","msg":msg};
+			
+			wsocket.send(JSON.stringify(data));
+		});
 
-			wsocket.send(msg);
-		};
-
-		connButton.onclick = function(event){
+		connButton.click(function(event){
+		
 			wsocket = new WebSocket("ws://211.238.142.79:8080/MavenPrj/resource/chatserver");
 			wsocket.onopen = function(){
 				alert("접속 되었습니다.");
 			};
 
 			wsocket.onmessage = function(event){
-				alert(event.data);
+		 		var li = document.createElement("li");
+				var data = JSON.parse(event.data);
+				li.textContent = "[" + data.id + "]"+data.msg;
+				
+				chatList.append(li); 
 			};
 
 			wsocket.onclose = function(){
 				alert("접속이 끊겼습니다.")
 			};
-		};
+		});
 	 });
 </script>
 </head>
@@ -53,6 +65,7 @@
 	<div id="chat-client">
 		<div id="chat-list-box">
 			<ul id="chat-list">
+	
 			</ul>
 		</div>
 		<div id="chat-panel">
