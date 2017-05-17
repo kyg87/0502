@@ -26,4 +26,40 @@ public class RootController {
 		return "1";
 	}
 	
+	@RequestMapping(value="/category", produces="text/plain;charset=UTF-8")	
+	@ResponseBody
+	public String category(
+			@RequestParam(value = "id") String id
+			
+			){
+		
+		String json = "";
+	      
+	      switch(id){
+	      
+	      case "1":
+	         
+	         json = "[{\"id\":\"1\",\"title\":\"강서구\"},{\"id\":\"2\", \"title\":\"노원구\"}]";
+	         
+	         break;
+	         
+	      case "2":
+	         
+	         json = "[{\"id\":\"1\",\"title\":\"시흥시\"},{\"id\":\"2\", \"title\":\"용인시\"}]";
+	         
+	         break;
+	         
+	      case "3":
+	         
+	         json = "[{\"id\":\"1\",\"title\":\"강릉시\"},{\"id\":\"2\", \"title\":\"속초시\"}]";
+	         
+	         break;
+	      
+	      }
+		
+
+		return json;
+	}
+	
+	
 }

@@ -38,10 +38,12 @@
 			//$("body div:last-child").load("../notice-reg-partial.jsp");
 			
 			var data = $("#form").serialize();
-			alert(data);
+			//alert(data);
 			
 			$.post("post-proc.jsp", data ,function(d){
-				alert(d);
+				alert(d); 
+				console.log("ajax" + d);
+
 			});
 		});
 	});

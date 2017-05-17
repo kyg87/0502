@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/MavenPrj/resource/css/style.css" type="text/css"
+	rel="stylesheet">
+<script type="text/javascript">
+	window.addEventListener("load", function() {
+		console.log("loaded");
+
+		var banner = document.querySelector(".banner");
+		var prevButton = document.querySelector(".prev-button");
+		var nextButton = document.querySelector(".next-button");
+
+		banner.style.left = "0%";
+
+		prevButton.addEventListener("click",function(){
+			console.log('left');
+			banner.style.left = "100%";
+		});
+		
+		nextButton.addEventListener("click",function(){
+			console.log('right');
+			console.log(banner.style.left);
+			
+			
+			banner.style.left = parseInt(banner.style.left)-100+"%";
+		});
+	});
+/* 	window.addEventListener("load", function() {
+		console.log("loaded");
+	});
+
+	window.addEventListener("scroll", function() {
+		console.log(document.scrollingElement.scrollTop);
+
+		if (document.scrollingElement.scrollTop > 50) {
+			var header = document.querySelector("#header");
+			header.style.position = "fixed";
+		}
+
+	
+	}); */
+	
+	
+</script>
+</head>
+<body>
+<div id="header">
+      <div><img src="/MavenPrj/resource/images/ic_menu_black_24dp_1x.png" /></div>
+      <div class="content-container">      
+         
+         <h1><a><img src="/MavenPrj/resource/images/logo.png" /></a></h1>      
+         <section>
+            <nav id="main-menu">
+               <h1 class="hidden">메인메뉴</h1>
+               <ul>
+                  <li><a href="">학습가이드</a></li>
+                  <li><a href="">뉴렉과정</a></li>
+                  <li><a href="">강좌선택</a></li>
+               </ul>
+            </nav>
+         </section>
+         
+      
+      </div>
+      
+      <div ><img src="/MavenPrj/resource/images/ic_search_black_24dp_1x.png" /></div>
+      <div class="more-vert-button"><img src="/MavenPrj/resource/images/ic_more_vert_black_24dp_1x.png" /></div>
+   </div>
+
+
+	<div id="visual">
+		<h2 class="hidden">공지목록</h2>
+		<ul class="banner">
+		  <li style= 'background: url("images/lecture/banner-spring180.png") no-repeat center ;background-size: cover;'>
+		  	<a href="" ></a>
+		  </li>
+		   <li style= 'background: url("images/lecture/banner-javascript180.png") no-repeat center ;center ;background-size: cover;'>
+		  	<a href="" ></a>
+		  </li>
+		   <li style= 'background: url("images/lecture/banner-oracle180.png") no-repeat center ;center ;background-size: cover;'>
+		  	<a href="" ></a>
+		  </li>
+		</ul>
+		<ul class="mov-button">
+			<li class="prev-button">이전</li>
+			<li class="next-button">다음</li>
+		</ul>
+	</div>
+	
+	<script type="text/javascript">
+	window.addEventListener("load", function() {
+		
+		
+		
+		
+	});
+	</script>
+	<div id="notice">
+		공지
+	</div>
+		
+	<main id="lectures"> 강좌목록 </main>
+	<footer id="footer"> Copyright@@@ </footer>
+</body>
+</html>
