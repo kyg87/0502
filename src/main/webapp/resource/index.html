@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="/MavenPrj/resource/css/style.css" type="text/css"
+<link href="css/style.css" type="text/css"
 	rel="stylesheet">
 <script type="text/javascript">
 	window.addEventListener("load", function() {
@@ -13,8 +13,23 @@
 		var banner = document.querySelector(".banner");
 		var prevButton = document.querySelector(".prev-button");
 		var nextButton = document.querySelector(".next-button");
+		var moreVertButton = document.querySelector(".more-vert-button");
+
+		var visual = document.querySelector("#visual");
+		var mainMenu = document.querySelector("#main-menu");
+		var mainMenuList = document.querySelector("#main-menu>ul");
+		 
 
 		banner.style.left = "0%";
+
+			mainMenu.style.display = "block";
+			mainMenu.style.position = "absolute";
+			mainMenu.style.top = "50px";
+			mainMenu.style.left = "0px";
+			mainMenu.style.width ="100%";
+			mainMenu.style.height ="0px";
+			mainMenuList.style.display = "none";
+			
 
 		prevButton.addEventListener("click",function(){
 			console.log('left');
@@ -28,7 +43,23 @@
 			
 			banner.style.left = parseInt(banner.style.left)-100+"%";
 		});
+
+		moreVertButton.addEventListener("click",function(){
+		
+		visual.style.marginTop = "30px";
+		mainMenu.style.height = "30px";
+			setTimeout(function() {
+				
+				mainMenuList.style.display = "flex";
+			
+			}, 500); 
+
+
+
+		});
 	});
+
+
 /* 	window.addEventListener("load", function() {
 		console.log("loaded");
 	});
@@ -49,10 +80,10 @@
 </head>
 <body>
 <div id="header">
-      <div><img src="/MavenPrj/resource/images/ic_menu_black_24dp_1x.png" /></div>
+      <div><img src="images/ic_menu_black_24dp_1x.png" /></div>
       <div class="content-container">      
          
-         <h1><a><img src="/MavenPrj/resource/images/logo.png" /></a></h1>      
+         <h1><a><img src="images/logo.png" /></a></h1>      
          <section>
             <nav id="main-menu">
                <h1 class="hidden">메인메뉴</h1>
@@ -67,8 +98,8 @@
       
       </div>
       
-      <div ><img src="/MavenPrj/resource/images/ic_search_black_24dp_1x.png" /></div>
-      <div class="more-vert-button"><img src="/MavenPrj/resource/images/ic_more_vert_black_24dp_1x.png" /></div>
+      <div ><img src="images/ic_search_black_24dp_1x.png" /></div>
+      <div class="more-vert-button"><img src="images/ic_more_vert_black_24dp_1x.png" /></div>
    </div>
 
 

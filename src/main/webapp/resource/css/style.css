@@ -29,6 +29,9 @@ h1{
 	overflow: hidden;
 	
 	position: relative;
+	transition-duration: 0.5s;
+	transition-property: margin-top;
+	
 }
 
 #visual .banner{
@@ -108,6 +111,7 @@ h1{
 	box-shadow: 2px 5px 0px #5e4b5e;
 	padding: 10px;
 	z-index: 99999;
+	top: 0px;
 	
 	}
 	
@@ -137,8 +141,8 @@ h1{
 
 	
 	display: flex;
-	line-height: 50px;
-	
+	line-height: 30px;
+ 	justify-content: space-around;
 }
 
 #header > h1 img{
@@ -148,6 +152,9 @@ h1{
 
 #main-menu{
 	display: none;
+	background: #fff;
+	transition-duration: 2s;
+	transition-property: height;	
 }
 
 
