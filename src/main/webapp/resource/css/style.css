@@ -44,6 +44,7 @@ h1{
 	
 	left: 0px;
 	transition-duration: 1s;
+	transition-property: left;
 	 
 }
 
@@ -137,13 +138,13 @@ h1{
 	justify-content: center;
 }
 
-#header .content-container ul{
+/*#header .content-container ul{
 
 	
 	display: flex;
 	line-height: 30px;
  	justify-content: space-around;
-}
+}*/
 
 #header > h1 img{
    
@@ -157,6 +158,20 @@ h1{
 	transition-property: height;	
 }
 
+.more-vert-button{
+	cursor: pointer;
+}
+
+.side-menu{
+	position: fixed;
+	left: -65%;
+	top: 0px;
+	background: yellow;
+
+	width: 66%;
+	height: 100%;
+
+}
 
 
 .title{

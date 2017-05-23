@@ -19,17 +19,19 @@
 		var mainMenu = document.querySelector("#main-menu");
 		var mainMenuList = document.querySelector("#main-menu>ul");
 		 
+		 var hambugerButton = document.querySelector(".hambuger-button");
 
 		banner.style.left = "0%";
 
-			mainMenu.style.display = "block";
-			mainMenu.style.position = "absolute";
-			mainMenu.style.top = "50px";
-			mainMenu.style.left = "0px";
-			mainMenu.style.width ="100%";
-			mainMenu.style.height ="0px";
-			mainMenuList.style.display = "none";
+		mainMenu.style.display = "block";
+		mainMenu.style.position = "absolute";
+		mainMenu.style.top = "50px";
+		mainMenu.style.left = "0px";
+		mainMenu.style.width ="100%";
+		mainMenu.style.height ="0px";
+		mainMenuList.style.display = "none";
 			
+		banner.style.width = "300%";
 
 		prevButton.addEventListener("click",function(){
 			console.log('left');
@@ -40,23 +42,57 @@
 			console.log('right');
 			console.log(banner.style.left);
 			
+			if(parseInt(banner.style.left) <= -200){
+				
+				
+				
+				var li = banner.querySelector("li:first-Child");
+
+				banner.style.width = parseInt(banner.style.width)+100+"%";
+				var clone = li.cloneNode(true);
+				banner.appendChild(clone);
+				
+			
+		
+			}
 			
 			banner.style.left = parseInt(banner.style.left)-100+"%";
 		});
 
+
 		moreVertButton.addEventListener("click",function(){
 		
-		visual.style.marginTop = "30px";
-		mainMenu.style.height = "30px";
-			setTimeout(function() {
-				
-				mainMenuList.style.display = "flex";
+		console.log();
+		
+			if(parseInt(mainMenu.style.height) == 0){
+				visual.style.marginTop = "30px";
+				mainMenu.style.height = "30px";
+
 			
-			}, 500); 
+				setTimeout(function() {
+					
+					mainMenuList.style.display = "flex";
+				
+				}, 500); 
+	
+			}else{
+					mainMenuList.style.display = "none";
+					mainMenu.style.top = "0px";
+					mainMenu.style.height ="0px";
+	
+			}
+	
+
 
 
 
 		});
+
+		hambugerButton.addEventListener("click",function(){
+
+			alert("kdkdkdk");
+		});
+
 	});
 
 
@@ -80,7 +116,7 @@
 </head>
 <body>
 <div id="header">
-      <div><img src="images/ic_menu_black_24dp_1x.png" /></div>
+      <div class="hambuger-button" ><img src="images/ic_menu_black_24dp_1x.png" /></div>
       <div class="content-container">      
          
          <h1><a><img src="images/logo.png" /></a></h1>      
@@ -93,6 +129,27 @@
                   <li><a href="">강좌선택</a></li>
                </ul>
             </nav>
+
+			<div class="side-menu">
+				<nav id="account-menu" class="hr-menu">
+				<h1 class="hidden">계정메뉴</h1>
+				<ul>
+					<li><a href="../index.html">HOME</a></li>
+					<li><a href="../account/login.html">로그인</a></li>
+					<li><a href="../join.html">회원가입</a></li>
+				</ul>
+				</nav>
+
+				<nav id="member-menu" class="hr-menu">
+				<h1 class="hidden">회원메뉴</h1>
+				<ul>
+					<li><input type="button" value="마이페이지" /></li>
+					<li><input type="button" value="고객 센터" /></li>
+				</ul>
+				</nav>
+
+			</div>
+
          </section>
          
       
