@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app ="calc-app">
+    <head>
+        <meta charset="UTF-8">
+        <title>Insert title here</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script>
+            var calcAppModule = angular.module("calc-app",[]);
+
+            calcAppModule.controller("calc-controller", function($scope){
+                
+                var notices = [
+                    {id:"1",title:"jsp1 ....."},
+                    {id:"2",title:"jsp 2....."},
+                    {id:"3",title:"jsp 3....."}
+                ];
+                
+                $scope.notices = notices;
+
+                $scope.hi = "Hellos~";
+                $scope.x = 0;
+                $scope.y = 0;
+
+                $scope.sumButtonClick = function(){
+                    $scope.result = $scope.x + $scope.y;
+                }
+
+                $scope.lastChildDeleteClick = function(){
+                 
+                    notices = [
+                        {id:"1",title:"jsp1 ....."},
+                        {id:"2",title:"jsp 2....."},
+                        
+                    ];
+                     $scope.notices = notices;
+                }
+            });
+        </script>
+    </head>
+    <body ng-controller ="calc-controller">
+        <h1>{{hi}}</h1>
+        x:<input type="number" value="0" ng-model="x"/>
+        y:<input type="number"  value="0" ng-model="y"/>
+        <input type="button" value="계산" ng-click="sumButtonClick()"/> </br>
+        result:{{x+y}} //// {{result}} </br>
+        <div>
+            <input type="button" value="막내삭제" ng-click="lastChildDeleteClick()">
+        </div>
+
+        <table border="1">
+            <thead>
+                <td> 번호 </td>
+                <td> 제목 </td>
+            </thead>
+            <tbody>
+
+                <tr ng-repeat="n in notices">
+                    <td>{{n.id}}</td>
+                    <td>{{n.title}}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+
+
+    </body>
+</html>
